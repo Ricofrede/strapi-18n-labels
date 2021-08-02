@@ -1,0 +1,20 @@
+{
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/",
+      "handler": "i18n-labels.read",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/write",
+      "handler": "i18n-labels.write",
+      "config": {
+        "policies": []
+      }
+    }
+  ]
+}
