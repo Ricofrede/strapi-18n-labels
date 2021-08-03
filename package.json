@@ -15,21 +15,29 @@
     "strapi-plugin-users-permissions": "3.6.5",
     "strapi-utils": "3.6.5"
   },
-  "author": {
-    "name": "Julio Tassinari",
-    "email": "tassinarijulio@gmail.com",
-    "url": "https://www.linkedin.com/in/julio-tassinari-599b57164/"
-  },
+  "author": "Julio Tassinari <tassinarijulio@gmail.com> (https://www.linkedin.com/in/julio-tassinari-599b57164/)",
   "maintainers": [
-    {
-      "name": "Julio Tassinari",
-      "email": "tassinarijulio@gmail.com",
-      "url": "https://www.linkedin.com/in/julio-tassinari-599b57164/"
-    }
+    "Julio Tassinari <tassinarijulio@gmail.com> (https://www.linkedin.com/in/julio-tassinari-599b57164/)"
   ],
   "engines": {
     "node": ">=10.16.0 <=14.x.x",
     "npm": ">=6.0.0"
   },
-  "license": "MIT"
+  "license": "MIT",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Ricofrede/strapi-18n-labels.git"
+  },
+  "keywords": [
+    "strapi",
+    "plugin",
+    "i18n"
+  ],
+  "bugs": {
+    "url": "https://github.com/Ricofrede/strapi-18n-labels/issues"
+  },
+  "homepage": "https://github.com/Ricofrede/strapi-18n-labels#readme"
 }
