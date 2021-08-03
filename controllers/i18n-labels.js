@@ -2,7 +2,7 @@
 const fs = require('fs')
 let labels
 try {
-  labels = require('../../../labels.json') || {}
+  labels = require(process.cwd()+'/labels.json') || {}
 } catch {
   labels = {}
 }
