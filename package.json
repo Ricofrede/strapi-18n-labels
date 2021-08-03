@@ -7,13 +7,11 @@
     "icon": "plug",
     "description": "This plugin stores static labels in different languages for reuse in the frontend."
   },
-  "dependencies": {
-    "strapi": "3.6.5",
-    "strapi-admin": "3.6.5",
+  "dependencies": {},
+  "peerDependencies": {
     "strapi-plugin-i18n": "3.6.5",
     "strapi-plugin-international-fields": "^1.0.0",
-    "strapi-plugin-users-permissions": "3.6.5",
-    "strapi-utils": "3.6.5"
+    "strapi-plugin-users-permissions": "3.6.5"
   },
   "author": "Julio Tassinari <tassinarijulio@gmail.com> (https://www.linkedin.com/in/julio-tassinari-599b57164/)",
   "maintainers": [
