@@ -1,0 +1,19 @@
+.labelsArc{
+    padding: 20%;
+}
+.labelKey{
+    color: white;
+    font-weight: bold;
+    padding: 5%;
+    background-color: darkgrey;
+    margin-bottom: 20px;
+}
+.labelsBtn{
+    margin-top: 20px;
+}
+.authHeader{
+    margin-bottom: 20px;
+}
+.info {
+    margin-top: 30px;
+}

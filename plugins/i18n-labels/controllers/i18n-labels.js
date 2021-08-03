@@ -1,6 +1,5 @@
 'use strict';
 const fs = require('fs')
-const fetch = require('node-fetch')
 let labels
 try {
   labels = require('../../../labels.json') || {}

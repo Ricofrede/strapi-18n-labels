@@ -1,21 +1,21 @@
-import React from 'react'
 import { useState, useEffect } from 'react'
 
-export default function useAuth() {
+export default function useAuth(user,password,submit) {
    const [jwt, setJwt] = useState()
+   const baseUrl = window.location.href.split("/admin/")[0]
 
    useEffect(()=>{
-        fetch('http://localhost:1337/auth/local',{
+        fetch(baseUrl + '/auth/local',{
             method: "POST",
             headers: {
                 "Content-Type" : "application/json"
             },
             body: JSON.stringify({
-                "identifier": "admin",
-                "password": "12345678"
+                "identifier": user,
+                "password": password
             })
         }).then(res => res.json()).then(data => setJwt(data.jwt))
-   }, [])
+   }, [submit])
 
    return jwt
 }

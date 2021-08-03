@@ -1,12 +1,11 @@
-import React from 'react'
 import { useState, useEffect } from 'react'
-import useAuth from './useAuth'
 
 export default function useLocales(jwt) {
     const [locales, setLocales] = useState(null)
+    const baseUrl = window.location.href.split("/admin/")[0]
 
     useEffect(()=>{
-        fetch("http://localhost:1337/i18n/locales",{
+        fetch(baseUrl + "/i18n/locales",{
             method: "GET",
             headers: {
               "Content-Type" : "text/plain",
@@ -21,7 +20,8 @@ export default function useLocales(jwt) {
                 })
                 setLocales(listLocs)
             })
-    }, [])
+            .catch(err => console.log(err))
+    }, [jwt])
     
     return locales
 }

@@ -5,61 +5,44 @@
  */
 
 import React, { memo } from 'react';
+import { useState } from 'react';
+import AddLabels from './AddLabels';
 // import PropTypes from 'prop-types';
-import pluginId from '../../pluginId';
-import useLocales from './useLocales';
 import useAuth from './useAuth';
 
 const HomePage = () => {
-  const jwt = useAuth()
-  const locales = jwt && useLocales(jwt)
-  
-  function handleSubmit(event){
+  const [user, setUser] = useState(null)
+  const [password, setPassword] = useState(null)
+  const [submit, setSubmit] = useState(null)
+  const jwt = useAuth(user,password,submit)
+
+  function login(event){
     event.preventDefault()
-
-    const form = event.target
-    const children = form.children
-    const body = {}
-
-    if (!children[0].lastChild.value) return
-
-    const labelKey = children[0].lastChild.value
-    children[0].lastChild.value = null
-    body[labelKey] = {}
-
-    for (let child of children){
-      if ((child.lastChild.id !== 'labelKey') && (child.id !== 'form-submit')){
-        body[labelKey][child.lastChild.id] = child.lastChild.value
-      }
-    }
-
-    fetch("http://localhost:1337/i18n-labels/write",{
-      method: "POST",
-      headers: {
-        "Content-Type" : "text/plain",
-        "Authorization": `Bearer ${jwt}`
-      },
-      body: JSON.stringify(body)
-    })
+    setSubmit(true)
   }
 
   return (
-    <div>
-      <h1>Add New i18n Labels</h1>
-
-      <form onSubmit={handleSubmit}>
-        <div class="form-group">
-          <label htmlFor="labelKey">Label Key</label>
-          <input type="text" class="form-control" id="labelKey" name="labelKey" />
+    <div className="labelsArc">
+      {!jwt && <div>
+        <div className="authHeader">
+          <h1>Authenticate</h1>
+          <h4>Use an authenticated user with rights to add new labels</h4>
         </div>
-        {locales && locales.map(loc => {
-          return (<div class="form-group" key={loc}>
-            <label htmlFor={loc}>{loc}</label>
-            <input type="text" class="form-control" id={loc} name={loc}/>
-          </div>)
-        })}
-        <button type="submit" id="form-submit" class="btn btn-primary">Submit</button>
-      </form>
+
+        <form onSubmit={login}>
+          <label htmlFor="user">Authenticated User</label>
+          <input type="text" class="form-control" id="user" name="user" onChange={chg => setUser(chg.target.value)}/>
+          <label htmlFor="password">Password</label>
+          <input type="password" class="form-control" id="password" name="password" onChange={chg => setPassword(chg.target.value)}/>
+          <button type="submit" id="login-submit" class="btn btn-primary labelsBtn">Login</button>
+        </form>
+      </div>}
+      {jwt && <AddLabels jwt={jwt}/>}
+
+      <div className="info">
+        <p> You may fetch for the existing labels at <a href={window.location.href.split("/admin/")[0] + "/i18n-labels"}>{window.location.href.split("/admin/")[0] + "/i18n-labels"}</a></p>
+      </div>
+      
     </div>
   );
 };

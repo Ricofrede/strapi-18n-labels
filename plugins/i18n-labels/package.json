@@ -1,23 +1,30 @@
 {
   "name": "strapi-plugin-i18n-labels",
-  "version": "0.0.0",
-  "description": "This is the description of the plugin.",
+  "version": "1.0.0",
+  "description": "This plugin stores static labels in different languages for reuse in the frontend.",
   "strapi": {
     "name": "i18n-labels",
     "icon": "plug",
-    "description": "Description of i18n-labels plugin."
+    "description": "This plugin stores static labels in different languages for reuse in the frontend."
   },
-  "dependencies": {},
+  "dependencies": {
+    "strapi": "3.6.5",
+    "strapi-admin": "3.6.5",
+    "strapi-plugin-i18n": "3.6.5",
+    "strapi-plugin-international-fields": "^1.0.0",
+    "strapi-plugin-users-permissions": "3.6.5",
+    "strapi-utils": "3.6.5"
+  },
   "author": {
-    "name": "A Strapi developer",
-    "email": "",
-    "url": ""
+    "name": "Julio Tassinari",
+    "email": "tassinarijulio@gmail.com",
+    "url": "https://www.linkedin.com/in/julio-tassinari-599b57164/"
   },
   "maintainers": [
     {
-      "name": "A Strapi developer",
-      "email": "",
-      "url": ""
+      "name": "Julio Tassinari",
+      "email": "tassinarijulio@gmail.com",
+      "url": "https://www.linkedin.com/in/julio-tassinari-599b57164/"
     }
   ],
   "engines": {
