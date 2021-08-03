@@ -1,44 +1,35 @@
 {
-  "name": "i-18-n-strapi-plugin",
-  "private": true,
-  "version": "0.1.0",
-  "description": "A Strapi application",
-  "scripts": {
-    "develop": "strapi develop",
-    "start": "strapi start",
-    "build": "strapi build",
-    "strapi": "strapi"
+  "name": "strapi-plugin-i18n-labels",
+  "version": "1.0.0",
+  "description": "This plugin stores static labels in different languages for reuse in the frontend.",
+  "strapi": {
+    "name": "i18n-labels",
+    "icon": "plug",
+    "description": "This plugin stores static labels in different languages for reuse in the frontend."
   },
-  "devDependencies": {},
   "dependencies": {
-    "install": "^0.13.0",
-    "knex": "0.21.18",
-    "node-fetch": "^2.6.1",
-    "npm": "^7.20.3",
-    "sqlite3": "5.0.0",
     "strapi": "3.6.5",
     "strapi-admin": "3.6.5",
-    "strapi-connector-bookshelf": "3.6.5",
-    "strapi-plugin-content-manager": "3.6.5",
-    "strapi-plugin-content-type-builder": "3.6.5",
-    "strapi-plugin-documentation": "^3.6.5",
-    "strapi-plugin-email": "3.6.5",
-    "strapi-plugin-graphql": "^3.6.5",
     "strapi-plugin-i18n": "3.6.5",
     "strapi-plugin-international-fields": "^1.0.0",
-    "strapi-plugin-upload": "3.6.5",
     "strapi-plugin-users-permissions": "3.6.5",
     "strapi-utils": "3.6.5"
   },
   "author": {
-    "name": "A Strapi developer"
+    "name": "Julio Tassinari",
+    "email": "tassinarijulio@gmail.com",
+    "url": "https://www.linkedin.com/in/julio-tassinari-599b57164/"
   },
-  "strapi": {
-    "uuid": "55fb3e86-5b5b-4bf0-ba6f-ab52e010eb92"
-  },
+  "maintainers": [
+    {
+      "name": "Julio Tassinari",
+      "email": "tassinarijulio@gmail.com",
+      "url": "https://www.linkedin.com/in/julio-tassinari-599b57164/"
+    }
+  ],
   "engines": {
     "node": ">=10.16.0 <=14.x.x",
-    "npm": "^6.0.0"
+    "npm": ">=6.0.0"
   },
   "license": "MIT"
 }
