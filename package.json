@@ -1,6 +1,6 @@
 {
   "name": "strapi-plugin-i18n-labels",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "This plugin stores static labels in different languages for reuse in the frontend.",
   "strapi": {
     "name": "i18n-labels",
